@@ -1346,7 +1346,11 @@ if (typeof jQuery != 'undefined') {
 
 						// seek to where the mouse is
 						if (mouseIsDown && newTime !== media.currentTime) {
-							media.setCurrentTime(newTime);
+							try {
+								media.setCurrentTime(newTime);
+							} catch (e) {
+								
+							}
 						}
 
 						// position floating time box
